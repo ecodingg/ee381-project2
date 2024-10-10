@@ -1,10 +1,6 @@
 #Eden Doss-Fillmore
 #Project 2
-import numpy
-import matplotlib
-import pandas
 import random
-
 
 #Problem 1
 def prob1() -> bool:
@@ -52,4 +48,8 @@ def main():
         result = prob1()
         if(result == False):
             count += 1
-    print(count)
+            print(count)
+        else:
+            print("True result")
+
+main()
