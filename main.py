@@ -2,7 +2,7 @@
 #Project 2
 import random
 
-#Problem 1
+#Problem 1 - WIP
 def prob1() -> bool:
     #Variables
     p0 = 0.4
@@ -29,20 +29,20 @@ def prob1() -> bool:
         result = False
         return result
 
-#Problem 2
+#Problem 2 - N/A
 def prob2():
-
     print("oh")
 
-#Problem 3
+#Problem 3 - N/A
 def prob3():
     print("eh")
 
-#Problem 4
+#Problem 4 - N/A
 def prob4():
     print("uh")
 
 def main():
+    #Problem 1
     count = 0
     for i in range(10,000):
         result = prob1()
