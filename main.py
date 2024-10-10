@@ -2,7 +2,7 @@
 #Project 2
 import random
 
-#Problem 1 - WIP
+#Problem 1 - DONE
 def prob1() -> bool:
     #Variables
     p0 = 0.4
@@ -19,14 +19,17 @@ def prob1() -> bool:
     else:
         signalS = 1
 
-    if ((signalS == 0 and t <= e1) or (signalS == 1 and t > e1)):
+    if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
         signalR = 1
-        return True
     elif ((signalS == 0 and t > e0) or (signalS == 1 and t <= e1)):
         signalR = 0
+        
+    if(signalR != signalS):
+        return True
+    else:
         return False
 
-#Problem 2 - WIP
+#Problem 2 - DONE
 def prob2() -> bool:
     #Variables
     p0 = 0.4
@@ -43,7 +46,7 @@ def prob2() -> bool:
     else:
         signalS = 1
 
-    if ((signalS == 0 and t <= e1) or (signalS == 1 and t > e1)):
+    if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
         signalR = 1
     elif ((signalS == 0 and t > e0) or (signalS == 1 and t <= e1)):
         signalR = 0
@@ -61,6 +64,7 @@ def prob3() -> bool:
 def prob4() -> bool:
     print("uh")
 
+#Main function
 def main():
     #Problem 1
     count = 0
@@ -69,7 +73,7 @@ def main():
         if(result == False):
             count += 1
             
-    print("Problem 1: p=",count, "/10,000")
+    print("Problem 1: p =",count, "/ 10000")
 
     #Problem 2
     count = 0
@@ -78,7 +82,7 @@ def main():
         if(result == True):
             count+=1
     
-    print("Problem 2: p=",count,"/100,000")
+    print("Problem 2: p =",count,"/ 100000")
 
     #Problem 3
 
