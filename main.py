@@ -1,5 +1,14 @@
 #Eden Doss-Fillmore
 #Project 2
+import numpy
+import matplotlib
+import pandas
+
+#Variables
+p0 = 0.4
+e0 = 0.02
+e1 = 0.015
+
 
 #Problem 1
 def prob1():
