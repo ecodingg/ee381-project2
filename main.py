@@ -1,5 +1,8 @@
 #Eden Doss-Fillmore
 #Project 2
+#https://github.com/ecodingg/ee381-project2 - GitHub link
+
+
 import random
 
 #Problem 1 - DONE
