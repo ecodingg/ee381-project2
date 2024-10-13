@@ -94,6 +94,7 @@ def prob4() -> bool:
     e1 = 0.015
     signalS = 0
     signalR = 0
+    signalD = 0
     m = random.uniform(0.00, 1.00)
     t = random.uniform(0.015, 0.02)
 
@@ -103,6 +104,7 @@ def prob4() -> bool:
     else:
         signalS = 1
 
+    #Assign Variable R
     if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
         signalR = 1
     elif ((signalS == 0 and t > e0) or (signalS == 1 and t <= e1)):
@@ -122,7 +124,7 @@ def main():
         if(result == False):
             count += 1
 
-    print("Problem 1: p =",count, "/ 10000")
+    print("Problem 1: p =",count, "/ 10000 = ", (count/10000))
 
     #Problem 2
     count = 0
@@ -131,7 +133,7 @@ def main():
         if(result == True):
             count+=1
 
-    print("Problem 2: p =",count,"/ 100000")
+    print("Problem 2: p =",count,"/ 100000 = ", (count/100000))
 
     #Problem 3
     count = 0
@@ -140,7 +142,7 @@ def main():
         if(result == True):
             count+=1
 
-    print("Problem 3: p =",count,"/ 10000")
+    print("Problem 3: p =",count,"/ 10000= ", (count/10000))
 
     #Problem 4
 
