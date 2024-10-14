@@ -88,19 +88,25 @@ def prob3() -> bool:
         return True
 
 #Problem 4 - WIP
-def prob4(n) -> bool:
+def prob4() -> bool:
     #Variables
     p0 = 0.4
     e0 = 0.02
     e1 = 0.015
-    signalS = n
     rSignals = []
     signalD = None
-    m = random.uniform(0.00, 1.00)
-    t = random.uniform(0.015, 0.02)
 
 
     for r in range(3):
+        m = random.uniform(0.00, 1.00)
+        t = random.uniform(0.015, 0.02)
+        
+        #Assign Variable S
+        if(m <= p0):
+            signalS = 0
+        else:
+            signalS = 1
+        
         if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
             r = 1
             rSignals.append(r)
@@ -151,9 +157,8 @@ def main():
 
     #Problem 4 - WIP
     count = 0
-    sInput = input(print("Input S number: "))
     for i in range(10000):
-        result = prob4(sInput)
+        result = prob4()
         if(result == True):
             count += 1
     
