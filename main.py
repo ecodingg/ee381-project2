@@ -4,6 +4,7 @@
 
 
 import random
+import numpy as np
 
 #Problem 1 - DONE
 def prob1() -> bool:
@@ -87,30 +88,33 @@ def prob3() -> bool:
         return True
 
 #Problem 4 - WIP
-def prob4() -> bool:
+def prob4(n) -> bool:
     #Variables
     p0 = 0.4
     e0 = 0.02
     e1 = 0.015
-    signalS = 0
-    signalR = 0
-    signalD = 0
+    signalS = n
+    r1,r2,r3 = 0
+    rSignals = [r1, r2, r3]
+    signalD = None
     m = random.uniform(0.00, 1.00)
     t = random.uniform(0.015, 0.02)
 
-    #Assign Variable S
-    if(m <= p0):
-        signalS = 0
+
+    for r in rSignals:
+        if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
+            r = 1
+        elif ((signalS == 0 and t > e0) or (signalS == 1 and t <= e1)):
+            r = 0
+
+    rSum = np.sum(rSignals)
+
+    if(3.00 >= rSum >= 1.5):
+        signalD = 1
     else:
-        signalS = 1
+        signalD = 0
 
-    #Assign Variable R
-    if ((signalS == 0 and t <= e0) or (signalS == 1 and t > e1)):
-        signalR = 1
-    elif ((signalS == 0 and t > e0) or (signalS == 1 and t <= e1)):
-        signalR = 0
-
-    if(signalR != signalS):
+    if(signalD == None):
         return False
     else:
         return True
@@ -145,5 +149,14 @@ def main():
     print("Problem 3: p =",count,"/ 10000= ", (count/10000))
 
     #Problem 4
+    count = 0
+    sInput = input(print("Input S number: "))
+    for i in range(10000):
+        result = prob4(sInput)
+        if(result == True):
+            count += 1
+    
+    print("Problem 4: p =",count,"/ 10000= ", (count/10000))   
+    
 
 main()
